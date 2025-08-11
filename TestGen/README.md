@@ -9,66 +9,68 @@ Generate **high-quality unit tests** for your code instantly using **OpenAI**, *
 
 ---
 
-
-
----
-
 ## 📂 Project Structure
+
 ```
 TestGen/
 ├── templates/
-     ├──index.html
+│   └── index.html
 ├── app.py
 ```
 
 ---
 
 ## ⚡ Quick Start
----
 
 ### 1️⃣ Clone the Repository
+
 ```bash
 git clone https://github.com/PrateekJanagouda/Frontend-AI-Tooling-Challenge.git
-cd TestGen
+cd Frontend-AI-Tooling-Challenge/TestGen
 ```
 
-2️⃣ Install Dependencies
-```
+### 2️⃣ Install Dependencies
+
+```bash
 pip install flask requests
 ```
 
-3️⃣ Run the Application
-```
+### 3️⃣ Run the Application
+
+```bash
 python app.py
 ```
- By default app runs on : 
+
+By default, the app runs on:
+
 ```
 http://127.0.0.1:5000
 ```
-               or
+or
 
-Open in browser :    http://localhost:5000
-
+Open in browser: [http://localhost:5000](http://localhost:5000)
 
 ---
 
+## 🔌 API Endpoints
 
-🔌 API Endpoints
-GET /ollama/models
+### `GET /ollama/models`
+
 Returns locally available Ollama models.
 
-json
-Copy
-Edit
+**Response:**
+```json
 { "models": ["llama2", "mistral", ...] }
-POST /generate
+```
+
+---
+
+### `POST /generate`
+
 Generates unit tests from a code snippet.
 
-Request:
-
-json
-Copy
-Edit
+**Request:**
+```json
 {
   "code": "def add(a,b): return a+b",
   "language": "python",
@@ -78,25 +80,31 @@ Edit
   "model": "gpt-4o-mini",
   "ollama_model": ""
 }
-Response:
+```
 
-json
-Copy
-Edit
+**Response:**
+```json
 {
   "tests": "def test_add():\n    assert add(2,3) == 5\n..."
 }
-🔧 Supported Providers
-Provider	API Key Required	Notes
-OpenAI	✅	GPT models (gpt-4o-mini, etc.)
-Gemini	✅	gemini-2.0-flash by default
-Ollama	❌	Runs locally; detects models automatically
-OpenRouter	✅	Supports multiple free/paid models
+```
 
-📜 Prompt Template
-text
-Copy
-Edit
+---
+
+## 🔧 Supported Providers
+
+| Provider    | API Key Required | Notes                                        |
+|-------------|:---------------:|----------------------------------------------|
+| OpenAI      |      ✅         | GPT models (gpt-4o-mini, etc.)               |
+| Gemini      |      ✅         | gemini-2.0-flash by default                  |
+| Ollama      |      ❌         | Runs locally; detects models automatically   |
+| OpenRouter  |      ✅         | Supports multiple free/paid models           |
+
+---
+
+## 📜 Prompt Template
+
+```
 Generate unit tests in {language} using {framework or 'an appropriate test framework'} for the following code:
 
 {code}
@@ -105,35 +113,42 @@ Requirements:
 - Include both normal and edge-case coverage
 - Use descriptive test names
 - Output only the test code
-📸 Screenshot
-(Insert screenshot of the UI here)
+```
 
-🤝 Contributing
-Fork the repo
+---
 
-Create a new branch (feature/your-feature)
+## 📸 Screenshot
 
-Commit your changes
+*(Insert screenshot of the UI here)*
 
-Open a Pull Request
+---
 
-📄 License
+## 🤝 Contributing
+
+1. Fork the repo
+2. Create a new branch (`feature/your-feature`)
+3. Commit your changes
+4. Open a Pull Request
+
+---
+
+## 📄 License
+
 This project is licensed under the MIT License.
 
-💡 Tip
+---
+
+## 💡 Tip
+
 Want to run locally without API keys? Install Ollama and pull a model:
 
-bash
-Copy
-Edit
+```bash
 ollama pull llama2
-Then select Ollama in the UI.
+```
 
-yaml
-Copy
-Edit
+Then select Ollama in the UI.
 
 ---
 
 I kept this **minimal, professional, and GitHub-friendly** while still showing all necessary info.  
-If you want, I can also make a **fancier README with a banner image and visual UI
+If you want, I can also make a **fancier README with a banner image and visual UI**!
