@@ -31,24 +31,50 @@ Build a modern, interactive data dashboard using React (Vite preferred for speed
 
 ## Task 2 — AI Test Generator
 
-**Objective:**  
-Develop a Node.js CLI tool or web endpoint that uses a Large Language Model (LLM) to generate tests for React components.
+## 🎯 Objective
+Build a **Flask-based web app** that uses multiple Large Language Model (LLM) providers to automatically generate **unit tests** for any given code snippet — supporting Python, JavaScript, Java, Go, Ruby, and more — with optional test framework selection.
 
-**Steps:**
-1. **Input Handling:**  
-   Accept a code snippet (React component) as input.
+---
 
-2. **Prompt Engineering:**  
-   - Compose system and user prompts to guide the LLM.
-   - Instruct the model to generate Jest + React Testing Library tests.
-   - Ensure edge cases are included and only a code block is output.
+## 📝 Steps
 
-3. **Execution & Output:**  
-   - Run the tool on the two provided code snippets.
-   - Display the raw output from the LLM.
-   - Review and critique the generated tests.
-   - Refine and present the final, improved test cases.
+### 1. 📥 Input Handling
+- Accept a **code snippet** via a modern web UI.
+- Allow selection of:
+  - Programming language
+  - Test framework (optional)
+  - LLM provider (OpenAI, Google Gemini, OpenRouter, Ollama)
+  - Model name (when applicable)
+  - API key (for cloud providers)
 
+### 2. 🧠 Prompt Engineering
+- Craft **system** and **user** prompts to instruct the LLM to:
+  - Generate unit tests in the chosen language.
+  - Use the selected test framework, or pick an appropriate default.
+  - Ensure test coverage includes **edge cases** and realistic scenarios.
+  - Output **only** the complete test file code.
+
+### 3. ⚡ Execution & Output
+- Send the prompt and input data to the selected LLM provider:
+  - **OpenAI** via `chat/completions`
+  - **Google Gemini** via `generateContent`
+  - **OpenRouter** for free or paid models
+  - **Ollama** for local models (e.g., LLaMA, Mistral, etc.)
+- Display the generated tests in a formatted code block within the UI.
+- Provide a **copy-to-clipboard** option for convenience.
+
+### 4. 🔍 Review & Refinement
+- Test the app using **different code snippets** and **various providers**.
+- Validate:
+  - Test accuracy
+  - Code formatting
+  - Framework compatibility
+- Refine prompts and UI for better reliability and clarity.
+
+### 5. 🚀 Final Deliverable
+- A **professional, modern web interface** that enables developers to paste code and instantly receive high-quality unit tests from their chosen LLM.
+- Clean, maintainable Flask backend with clear API endpoints for `/generate` and `/ollama/models`.
+  
 ---
 
 ## Getting Started
