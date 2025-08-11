@@ -48,7 +48,10 @@ http://127.0.0.1:5000
 ```
 or
 
-Open in browser: [http://localhost:5000](http://localhost:5000)
+Open in browser: 
+```
+[http://localhost:5000](http://localhost:5000)
+```
 
 ---
 
