@@ -47,8 +47,8 @@ A modern, interactive traffic analytics dashboard built with **Vanilla JavaScrip
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/traffic-dashboard.git
-cd traffic-dashboard
+git clone https://github.com/PrateekJanagouda/Frontend-AI-Tooling-Challenge.git
+cd Frontend-AI-Tooling-Challenge
 ```
 
 ### 2️⃣ Set API Key _(Optional)_
