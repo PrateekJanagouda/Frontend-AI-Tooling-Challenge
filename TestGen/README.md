@@ -16,32 +16,36 @@ Generate **high-quality unit tests** for your code instantly using **OpenAI**, *
 ## 📂 Project Structure
 TestGen/
 ├── templates/
-│ ├── index.html # Web interface
-├── app.py # Flask backend API
+├──    ├──index.html
+├── app.py
 
-yaml
-Copy
-Edit
+
 
 ---
 
 ## ⚡ Quick Start
+---
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/yourusername/TestGen.git
+git clone https://github.com/PrateekJanagouda/Frontend-AI-Tooling-Challenge.git
 cd TestGen
+```
+
 2️⃣ Install Dependencies
-bash
-Copy
-Edit
+```
 pip install flask requests
+```
+
 3️⃣ Run the Application
-bash
-Copy
-Edit
+```
 python app.py
+```
+
 Open in browser: http://localhost:5000
+
+---
+
 
 🔌 API Endpoints
 GET /ollama/models
