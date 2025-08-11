@@ -14,12 +14,12 @@ Generate **high-quality unit tests** for your code instantly using **OpenAI**, *
 ---
 
 ## 📂 Project Structure
+```
 TestGen/
 ├── templates/
 ├──    ├──index.html
 ├── app.py
-
-
+```
 
 ---
 
