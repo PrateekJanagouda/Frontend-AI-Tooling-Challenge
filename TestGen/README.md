@@ -9,12 +9,7 @@ Generate **high-quality unit tests** for your code instantly using **OpenAI**, *
 
 ---
 
-## 🚀 Features
-- 🔹 **Multiple LLM Providers** — OpenAI, Google Gemini, Ollama (local), and OpenRouter.
-- 🔹 **Language & Framework Selection** — Choose Python, JavaScript, etc., with PyTest, Jest, and more.
-- 🔹 **Edge Case Coverage** — Prompt ensures realistic and edge-case test generation.
-- 🔹 **Modern Web UI** — Built with TailwindCSS for a sleek, responsive look.
-- 🔹 **Local or Cloud** — Use local Ollama models or cloud APIs.
+
 
 ---
 
