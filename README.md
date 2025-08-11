@@ -63,14 +63,6 @@ Build a **Flask-based web app** that uses multiple Large Language Model (LLM) pr
 - Display the generated tests in a formatted code block within the UI.
 - Provide a **copy-to-clipboard** option for convenience.
 
-### 4. 
-Review & Refinement
-- Test the app using **different code snippets** and **various providers**.
-- Validate:
-  - Test accuracy
-  - Code formatting
-  - Framework compatibility
-- Refine prompts and UI for better reliability and clarity.
 
 ### 5.  Final Deliverable
 - A **professional, modern web interface** that enables developers to paste code and instantly receive high-quality unit tests from their chosen LLM.
