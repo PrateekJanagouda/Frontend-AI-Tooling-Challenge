@@ -357,14 +357,14 @@ module.exports = {
 
 3.  **Create `setupTests.js` (Optional):** In your `src` directory (or the root, if you prefer), create a `setupTests.js` file:
 
-```javascript
+javascript
 // src/setupTests.js
 import '@testing-library/jest-dom'; // This is crucial!
-```
+
 
 4.  **Add Test Script to `package.json`:**
 
-```json
+json
 "scripts": {
   "test": "jest"  // or "test": "jest --watchAll" for watching changes
 }
