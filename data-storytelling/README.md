@@ -35,6 +35,7 @@ A modern, interactive traffic analytics dashboard built with **Vanilla JavaScrip
 
 ```
 ├── index.html           # Main dashboard HTML
+├── style.css            # Styling the page 
 ├── app.js               # Core logic: data fetching, processing, visualization
 ├── sample_data.json     # Offline dataset for testing
 └── README.md            # Project documentation
