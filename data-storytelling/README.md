@@ -52,11 +52,12 @@ git clone https://github.com/PrateekJanagouda/Frontend-AI-Tooling-Challenge.git
 cd Frontend-AI-Tooling-Challenge
 ```
 
-### 2️⃣ Set API Key _(Optional)_
+### 2️⃣ Set API Key 
 
 Open `app.js` and set your API key:
 
 ```javascript
+const API_URL = "your_api_url_here";
 const API_KEY = "your_api_key_here";
 ```
 
