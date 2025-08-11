@@ -17,7 +17,7 @@ Generate **high-quality unit tests** for your code instantly using **OpenAI**, *
 ```
 TestGen/
 ├── templates/
-├──    ├──index.html
+     ├──index.html
 ├── app.py
 ```
 
