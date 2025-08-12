@@ -1,5 +1,5 @@
 const API_URL = "https://harman.ssi.iviva.cloud/Lucy/Bosch_new_static/getAverageVehicleCount";
-// const API_KEY = "SC:hdemo:b7100e5a54712a0e";
+const API_KEY = "SC:hdemo:b7100e5a54712a0e";
 
 // Toggle between live API and sample data
 const USE_SAMPLE_DATA = false; // true for offline mode
@@ -7,7 +7,9 @@ const USE_SAMPLE_DATA = false; // true for offline mode
 async function fetchData() {
     if (USE_SAMPLE_DATA) {
         const res = await fetch("sample_data.json");
-        return res.json();
+        const data = await res.json();
+        console.log("Sample Data:", data);  // Log sample data
+        return data;
     }
 
     try {
@@ -15,11 +17,15 @@ async function fetchData() {
             headers: { Authorization: `APIKEY ${API_KEY}` }
         });
         if (!res.ok) throw new Error("API request failed");
-        return res.json();
+        const data = await res.json();
+        console.log("API Data:", data);  // Log API data
+        return data;
     } catch (error) {
         console.error("API failed, loading sample data...", error);
         const res = await fetch("sample_data.json");
-        return res.json();
+        const data = await res.json();
+        console.log("Sample Data on API failure:", data);  // Log fallback data
+        return data;
     }
 }
 
