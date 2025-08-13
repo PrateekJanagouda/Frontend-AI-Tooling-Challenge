@@ -40,7 +40,8 @@
         }
 
         .card {
-            background: white;
+            background-color: #e0e7ff; /* light blue */
+            color: #1e293b;
             padding: 20px 25px;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
@@ -57,6 +58,7 @@
 
         /* Hover for all cards */
         .card:hover {
+            
             transform: translateY(-4px);
             box-shadow: 0 10px 20px rgb(0 0 0 / 0.12);
         }
@@ -110,7 +112,7 @@
         }
 
         .card.total-vehicles h3 {
-            color: inherit;
+            color:inherit;
         }
 
         .card p, .card ul {
@@ -132,12 +134,13 @@
             padding-left: 0;
             margin-top: 0;
         }
+        
 
         ul li {
             padding: 8px 6px;
             border-radius: 6px;
             margin-bottom: 8px;
-            background: #f1f5f9;
+            background:  #e0e7ff;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -165,6 +168,12 @@
 
         /* Insights card */
         #insightText {
+            padding: 8px 6px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            background: #e0e7ff;
+            display: flex;
+            justify-content: space-between;
             font-size: 1.15rem;
             color: #334155;
             line-height: 1.5;
