@@ -107,15 +107,8 @@ This helps spot unusual spikes or drops in traffic.
 
 ---
 
-
----
-
-
 https://github.com/user-attachments/assets/9ba12ba9-bf72-4970-90fc-95638daf8e1c
 
-
-
----
 ---
 
 ## 🛠️ Built With
