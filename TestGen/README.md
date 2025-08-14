@@ -136,7 +136,6 @@ Requirements:
 Install the package
 ```
 pip install pymongo
-
 ```
 Install MongoDB locally
 
