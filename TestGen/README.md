@@ -134,7 +134,11 @@ Requirements:
 
 ## 📸 Screenshot
 
-<img width="1912" height="934" alt="image" src="https://github.com/user-attachments/assets/0d8b12a0-b650-4e1d-af06-d2834d5328c6" />
+
+<img width="1919" height="951" alt="image" src="https://github.com/user-attachments/assets/205c5500-96aa-4220-b3a3-26dc3ee20953" />
+
+
+
 above image shows the UI 
 
 ##  Example 1
@@ -144,6 +148,10 @@ As an example Gemini-2.0-flash has been considered
 In order to test we have taken the below JavaScript Code 
 
 source to the example code can be downloaded from [here](https://github.com/PrateekJanagouda/Frontend-AI-Tooling-Challenge/blob/main/TestGen/examples/example1.js)
+
+
+<img width="1603" height="903" alt="image" src="https://github.com/user-attachments/assets/3aff2ef8-2314-4737-b462-d626f740128b" />
+
 
 
 ---
