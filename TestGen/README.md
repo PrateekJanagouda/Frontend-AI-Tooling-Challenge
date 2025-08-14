@@ -131,9 +131,27 @@ Requirements:
 ```
 
 ---
+## MongoDB connection 
+
+Install the package
+```
+pip install pymongo
+
+```
+Install MongoDB locally
+
+[Install MongoDB](https://www.mongodb.com/docs/manual/installation/) 
+or 
+use a free cloud database from [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
 
 
+Set the MongoDB Connection
+```
+app.config["MONGO_URI"] = "mongodb://localhost:27017/unit_test_generator"
+```
 
+
+---
 ##  Example 1
 
 As an example Gemini-2.0-flash has been considered 
