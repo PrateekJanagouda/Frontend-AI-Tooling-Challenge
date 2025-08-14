@@ -6,63 +6,101 @@
   <title>AI Unit Test Generator</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      background: linear-gradient(135deg, #f8fafc, #eef2f7);
-    }
-    textarea, select, input {
-      background-color: #ffffff !important;
-    }
+    body { background: linear-gradient(135deg, #f8fafc, #eef2f7); }
+    textarea, select, input { background-color: #ffffff !important; }
   </style>
 </head>
-<body class="min-h-screen flex items-center justify-center p-6">
-  <div class="max-w-4xl w-full bg-white rounded-2xl shadow-lg p-8">
-    <h1 class="text-3xl font-bold text-gray-800 mb-2">AI Unit Test Generator</h1>
-    <p class="text-gray-500 mb-6">Generate high-quality unit tests for your code using OpenAI, Gemini, Ollama, or OpenRouter.</p>
+<body class="min-h-screen flex">
+  <!-- Sidebar -->
+<!-- Sidebar -->
+<div class="w-64 h-screen bg-gray-100 p-4 overflow-y-auto border-r border-gray-300">
+  <h2 class="text-lg font-bold mb-4">History</h2>
+  <ul id="history-list" class="space-y-2">
+    {% for item in history %}
+      <li class="bg-white p-2 rounded shadow flex justify-between items-center cursor-pointer"
+          onclick="loadHistory('{{ item._id }}')">
+        <span>{{ item.code[:3] }}...</span>
+        <span class="text-xs text-gray-500">{{ item.timestamp.strftime('%H:%M:%S') }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
 
-    <div class="space-y-4">
-      <textarea id="code" placeholder="Paste your code here..." rows="6" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+  <!-- Main content -->
+  <div class="flex-1 p-6 flex items-center justify-center">
+    <div class="max-w-4xl w-full bg-white rounded-2xl shadow-lg p-8">
+      <h1 class="text-3xl font-bold text-gray-800 mb-2">AI Unit Test Generator</h1>
+      <p class="text-gray-500 mb-6">Generate high-quality unit tests with OpenAI, Gemini, Ollama, or OpenRouter.</p>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div>
-          <label class="block text-sm font-medium text-gray-600 mb-1">Language</label>
-          <input id="language" value="python" class="w-full p-2 border border-gray-300 rounded-lg" />
+      <div class="space-y-4">
+        <textarea id="code" placeholder="Paste your code here..." rows="6"
+          class="w-full p-3 border border-gray-300 rounded-lg"></textarea>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div>
+            <label class="block text-sm font-medium mb-1">Language</label>
+            <input id="language" value="python" class="w-full p-2 border rounded-lg" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Framework</label>
+            <input id="framework" placeholder="e.g. pytest" class="w-full p-2 border rounded-lg" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Provider</label>
+            <select id="provider" class="w-full p-2 border rounded-lg">
+              <option value="openai">OpenAI</option>
+              <option value="gemini">Gemini</option>
+              <option value="ollama">Ollama</option>
+              <option value="openrouter">OpenRouter</option>
+            </select>
+          </div>
         </div>
-        <div>
-          <label class="block text-sm font-medium text-gray-600 mb-1">Framework</label>
-          <input id="framework" placeholder="e.g. pytest" class="w-full p-2 border border-gray-300 rounded-lg" />
+
+        <div id="api-key-section">
+          <label class="block text-sm font-medium mb-1">API Key</label>
+          <input id="api-key" type="password" placeholder="Enter your API key"
+            class="w-full p-2 border rounded-lg" />
         </div>
-        <div>
-          <label class="block text-sm font-medium text-gray-600 mb-1">Provider</label>
-          <select id="provider" class="w-full p-2 border border-gray-300 rounded-lg">
-            <option value="openai">OpenAI</option>
-            <option value="gemini">Gemini</option>
-            <option value="ollama">Ollama</option>
-            <option value="openrouter">OpenRouter</option>
-          </select>
+
+        <div id="model-section">
+          <label class="block text-sm font-medium mb-1">Model</label>
+          <input id="model" placeholder="Leave blank for default" class="w-full p-2 border rounded-lg" />
         </div>
+
+        <div id="ollama-section" class="hidden">
+          <label class="block text-sm font-medium mb-1">Ollama Model</label>
+          <select id="ollama-model" class="w-full p-2 border rounded-lg"></select>
+          <div id="ollama-loader" class="flex items-center mt-2 hidden">
+            <svg class="animate-spin h-5 w-5 mr-2 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8h4z"></path>
+            </svg>
+            <span>Loading models...</span>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-1">Requirements</label>
+          <input id="requirements" placeholder="Enter specific needs..."
+            class="w-full p-2 border rounded-lg" />
+        </div>
+
+        <button id="generate-btn"
+          class="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700">Generate Tests</button>
       </div>
 
-      <div id="api-key-section">
-        <label class="block text-sm font-medium text-gray-600 mb-1">API Key</label>
-        <input id="api-key" type="password" placeholder="Enter your API key" class="w-full p-2 border border-gray-300 rounded-lg" />
+      <div id="output-container" class="mt-6 hidden">
+        <h2 class="text-xl font-semibold text-gray-700 mb-2">Generated Unit Tests</h2>
+        <div class="flex gap-2 mb-2">
+    <button id="copy-btn" class="bg-gray-700 text-white px-3 py-1 rounded hover:bg-gray-800">
+      Copy
+    </button>
+    <button id="download-btn" class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">
+      Download
+    </button>
+  </div>
+        <pre id="output" class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-auto whitespace-pre-wrap"></pre>
       </div>
-
-      <div id="model-section">
-        <label class="block text-sm font-medium text-gray-600 mb-1">Model</label>
-        <input id="model" placeholder="Leave blank for default" class="w-full p-2 border border-gray-300 rounded-lg" />
-      </div>
-
-      <div id="ollama-section" class="hidden">
-        <label class="block text-sm font-medium text-gray-600 mb-1">Ollama Model</label>
-        <input id="ollama-model" placeholder="e.g. llama2" class="w-full p-2 border border-gray-300 rounded-lg" />
-      </div>
-
-      <button id="generate-btn" class="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition">Generate Tests</button>
-    </div>
-
-    <div id="output-container" class="mt-6 hidden">
-      <h2 class="text-xl font-semibold text-gray-700 mb-2">Generated Unit Tests</h2>
-      <pre id="output" class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-auto"></pre>
     </div>
   </div>
 
@@ -71,6 +109,8 @@
     const apiKeySection = document.getElementById("api-key-section");
     const modelSection = document.getElementById("model-section");
     const ollamaSection = document.getElementById("ollama-section");
+    const ollamaModelSelect = document.getElementById("ollama-model");
+    const ollamaLoader = document.getElementById("ollama-loader");
 
     providerSelect.addEventListener("change", () => {
       const provider = providerSelect.value;
@@ -78,6 +118,7 @@
         apiKeySection.classList.add("hidden");
         modelSection.classList.add("hidden");
         ollamaSection.classList.remove("hidden");
+        fetchOllamaModels();
       } else {
         apiKeySection.classList.remove("hidden");
         modelSection.classList.remove("hidden");
@@ -85,33 +126,66 @@
       }
     });
 
-    document.getElementById("generate-btn").addEventListener("click", async () => {
-      const code = document.getElementById("code").value;
-      const language = document.getElementById("language").value;
-      const framework = document.getElementById("framework").value;
-      const provider = providerSelect.value;
-      const apiKey = document.getElementById("api-key").value;
-      const model = document.getElementById("model").value;
-      const ollamaModel = document.getElementById("ollama-model").value;
+    function fetchOllamaModels() {
+      ollamaLoader.classList.remove("hidden");
+      ollamaModelSelect.innerHTML = "";
+      fetch("/ollama_models")
+        .then(res => res.json())
+        .then(models => {
+          ollamaLoader.classList.add("hidden");
+          if (models.length === 0) {
+            alert("No Ollama models found. Please install Ollama and pull a model:\n\n1. Install Ollama from https://ollama.com\n2. Run: ollama pull llama3.1");
+            return;
+          }
+          models.forEach(m => {
+            const opt = document.createElement("option");
+            opt.value = m;
+            opt.textContent = m;
+            ollamaModelSelect.appendChild(opt);
+          });
+        })
+        .catch(() => {
+          ollamaLoader.classList.add("hidden");
+          alert("Error fetching Ollama models. Is Ollama running?");
+        });
+    }
 
-      document.getElementById("output-container").classList.add("hidden");
+    document.getElementById("generate-btn").addEventListener("click", () => {
+      const params = {
+        code: document.getElementById("code").value,
+        language: document.getElementById("language").value,
+        framework: document.getElementById("framework").value,
+        provider: providerSelect.value,
+        api_key: document.getElementById("api-key").value,
+        model: document.getElementById("model").value,
+        ollama_model: ollamaModelSelect.value,
+        requirements: document.getElementById("requirements").value
+      };
 
-      const res = await fetch("/generate", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ code, language, framework, provider, api_key: apiKey, model, ollama_model: ollamaModel })
-      });
-
-      const data = await res.json();
-
-      if (data.error) {
-        document.getElementById("output").textContent = "Error: " + data.error;
-      } else {
-        document.getElementById("output").textContent = data.tests;
-      }
-
+      document.getElementById("output").textContent = "";
       document.getElementById("output-container").classList.remove("hidden");
+
+      const eventSource = new EventSource("/generate?" + new URLSearchParams(params));
+      eventSource.onmessage = (e) => {
+        document.getElementById("output").textContent += e.data +"\n";
+      };
+      eventSource.onerror = () => {
+        eventSource.close();
+      };
     });
+
+    function loadHistory(id) {
+      fetch("/history/" + id)
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById("code").value = data.code;
+          document.getElementById("language").value = data.language;
+          document.getElementById("framework").value = data.framework;
+          document.getElementById("requirements").value = data.requirements || "";
+          document.getElementById("output").textContent = data.tests;
+          document.getElementById("output-container").classList.remove("hidden");
+        });
+    }
   </script>
 </body>
 </html>
