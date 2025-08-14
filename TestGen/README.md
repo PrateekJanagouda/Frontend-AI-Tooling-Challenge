@@ -147,11 +147,6 @@ source to the example code can be downloaded from [here](https://github.com/Prat
 
 ```
 
-https://github.com/PrateekJanagouda/Frontend-AI-Tooling-Challenge/blob/main/TestGen/examples/example1.js
-
-
-```
-
 1 . Gemini with Google studio's Free API key and the Raw output for this is 
 
 ```
