@@ -2,6 +2,16 @@
 
 Generate **high-quality unit tests** for your code instantly using **OpenAI**, **Google Gemini**, **Ollama**, or **OpenRouter** — all from a clean, modern web interface.
 
+## ✨ Features
+
+- **Multiple AI Providers** — switch between OpenAI, Gemini, Ollama, and OpenRouter.
+- **Real-Time Streaming** — see generated tests appear line-by-line.
+- **Persistent History** — all generations stored in MongoDB with timestamps.
+- **Ollama Model Management** — list and pull local Ollama models from the UI.
+- **Automatic Output Cleaning** — ensures clean, ready-to-run code.
+- **Responsive UI** — sidebar history, dark/light friendly.
+
+
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![Flask](https://img.shields.io/badge/Flask-2.0+-yellow)
