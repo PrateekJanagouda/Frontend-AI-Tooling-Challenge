@@ -67,9 +67,9 @@ Open in browser:
 
 ## 🔌 API Endpoints
 
-### `GET   /ollama/models`
+### `GET   /ollama_models`
 ```
-http://localhost:5000/ollama/models
+http://localhost:5000/ollama_models
 ```
 Returns locally available Ollama models.
 
