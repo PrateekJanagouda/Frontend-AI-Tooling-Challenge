@@ -197,5 +197,15 @@ Then select Ollama in the UI.
 
 ---
 
-I kept this **minimal, professional, and GitHub-friendly** while still showing all necessary info.  
-If you want, I can also make a **fancier README with a banner image and visual UI**!
+## 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 👨‍💻 Author
+
+Prateek Janagouda  
+[GitHub Profile](https://github.com/PrateekJanagouda)
+
+---
