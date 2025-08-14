@@ -153,7 +153,8 @@ source to the example code can be downloaded from [here](https://github.com/Prat
 
 Raw output of the example code can be found [here](https://github.com/PrateekJanagouda/Frontend-AI-Tooling-Challenge/blob/main/TestGen/examples/example1_output.js)
 
----
+
+
 ##  Example 2
 ---
 Here is the Second example 
