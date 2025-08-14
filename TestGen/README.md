@@ -132,14 +132,7 @@ Requirements:
 
 ---
 
-## 📸 Screenshot
 
-
-<img width="1919" height="951" alt="image" src="https://github.com/user-attachments/assets/205c5500-96aa-4220-b3a3-26dc3ee20953" />
-
-
-
-above image shows the UI 
 
 ##  Example 1
 
