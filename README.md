@@ -77,6 +77,4 @@ Build a **Flask-based web app** that uses multiple Large Language Model (LLM) pr
 
 ---
 
-**Note:**  
-Focus on code quality, clear documentation, and user-friendly UX/UI.  
-Include comments and explanations where necessary, especially for complex data transformations and prompt logic.
+
