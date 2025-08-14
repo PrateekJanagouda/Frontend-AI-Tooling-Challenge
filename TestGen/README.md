@@ -159,8 +159,8 @@ Raw output of the example code can be found [here](https://github.com/PrateekJan
 
 Here is the Second example [here](https://github.com/PrateekJanagouda/Frontend-AI-Tooling-Challenge/blob/main/TestGen/examples/example2.js)
 
----
-## 1 . Gemini with Google studio's Free API key and the Raw output for this is 
+
+## 2 . Gemini with Google studio's Free API key and the Raw output for this is 
 
 
 Raw output of the example code can be found [here](https://github.com/PrateekJanagouda/Frontend-AI-Tooling-Challenge/blob/main/TestGen/examples/example2_output.js)
