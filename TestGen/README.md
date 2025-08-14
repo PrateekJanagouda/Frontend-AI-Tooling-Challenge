@@ -150,10 +150,8 @@ In order to test we have taken the below JavaScript Code
 source to the example code can be downloaded from [here](https://github.com/PrateekJanagouda/Frontend-AI-Tooling-Challenge/blob/main/TestGen/examples/example1.js)
 
 
-<img width="1603" height="903" alt="image" src="https://github.com/user-attachments/assets/3aff2ef8-2314-4737-b462-d626f740128b" />
+<img width="1083" height="625" alt="image" src="https://github.com/user-attachments/assets/a06c53f6-b202-4af7-8980-65f41a67c8c5" />
 
-
-<img width="327" height="358" alt="final-screen" src="https://github.com/user-attachments/assets/37a02974-cbe3-42a1-8632-fdd427ddceeb" />
 
 
 
