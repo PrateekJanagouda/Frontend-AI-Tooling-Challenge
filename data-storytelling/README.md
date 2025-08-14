@@ -117,7 +117,7 @@ https://github.com/user-attachments/assets/b7cb9d7f-81fb-4da5-b836-02874331d87d
 
 ## 🛠️ Built With
 
-- [Chart.js](https://www.chartjs.org/) — For data visualization
+- Chart.js— For data visualization
 - Vanilla JavaScript — For data processing & DOM updates
 - HTML & CSS — Layout and styling
 
