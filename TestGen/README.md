@@ -169,7 +169,7 @@ source to the example code can be downloaded from [here](https://github.com/Prat
 
 ---
 
-## 1 . Gemini with Google studio's Free API key and the Raw output for example 1 
+## 1 . Gemini with Google studio's Free API key and the Raw output for example1 
 
 
 Raw output of the example code can be found [here](https://github.com/PrateekJanagouda/Frontend-AI-Tooling-Challenge/blob/main/TestGen/examples/example1_output.js)
@@ -181,7 +181,7 @@ Raw output of the example code can be found [here](https://github.com/PrateekJan
 Here is the Second example [here](https://github.com/PrateekJanagouda/Frontend-AI-Tooling-Challenge/blob/main/TestGen/examples/example2.js)
 
 
-## 2 . Gemini with Google studio's Free API key and the Raw output for for example 2
+## 2 . Gemini with Google studio's Free API key and the Raw output for for example2
 
 
 Raw output of the example code can be found [here](https://github.com/PrateekJanagouda/Frontend-AI-Tooling-Challenge/blob/main/TestGen/examples/example2_output.js)
