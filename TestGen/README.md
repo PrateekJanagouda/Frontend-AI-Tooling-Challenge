@@ -187,7 +187,7 @@ This project is licensed under the MIT License.
 Want to run locally without API keys? Install Ollama and pull a model:
 
 ```bash
-ollama pull llama2
+ollama pull llama3.1
 ```
 
 Then select Ollama in the UI.
