@@ -146,14 +146,13 @@ In order to test we have taken the below JavaScript Code
 source to the example code can be downloaded from [here](https://github.com/PrateekJanagouda/Frontend-AI-Tooling-Challenge/blob/main/TestGen/examples/example1.js)
 
 
+---
 
-```
+## 1 . Gemini with Google studio's Free API key and the Raw output for this is 
 
-1 . Gemini with Google studio's Free API key and the Raw output for this is 
 
-```
 Raw output of the example code can be found [here](https://github.com/PrateekJanagouda/Frontend-AI-Tooling-Challenge/blob/main/TestGen/examples/example1_output.js)
-```
+
 ---
 ##  Example 2
 ---
